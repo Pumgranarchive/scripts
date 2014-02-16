@@ -9,7 +9,7 @@ git clone https://github.com/ocaml/opam.git && cd opam && ./configure && make &&
 
 echo "y\n" | opam init
 eval `opam config env`
-opam repository add opamocsigen http://ocsigen.org/opam
+opam repository add opamocsigen https://github.com/ocsigen/opam-ocsigen.git
 opam switch 4.00.1
 eval `opam config env`
 
