@@ -17,10 +17,10 @@ tar -xvf ocaml-data-notation.tar.gz && cd ocaml-data-notation-0.0.11 && ./config
 
 tar -xvf oasis.tar.gz && cd oasis-0.4.0 && ./configure && make && rm -rf ~/.opam/4.00.1/lib/userconf && rm -rf ~/.opam/4.00.1/lib/oasis && rm -rf ~/.opam/4.00.1/lib/plugin-loader
 
+echo "Y\n" | opam install dbm menhir eliom yojson
+
 git clone https://github.com/ocsigen/wikidoc.git && cd wikidoc && make && sudo make uninstall && rm -rf ~/.opam/4.00.1/lib/wikidoc
 make install || sudo make install && cd ..
-
-echo "Y\n" | opam install dbm menhir eliom yojson
 
 git clone https://github.com/MassD/bson.git && cd bson && ./configure && make && rm -rf ~/.opam/4.00.1/lib/bson && make install && cd ..
 
