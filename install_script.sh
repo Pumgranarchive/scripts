@@ -31,7 +31,7 @@ eval `opam config env`
 opam install ocsigenserver
 eval `opam config env`
 
-git clone https://github.com/ocsigen/eliom.git && cd eliom && sh configure && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/eliom && sudo make install && cd ..
+git clone https://github.com/ocsigen/eliom.git && cd eliom && git checkout 2107b8bee3772845169d2944cc389f4e7d19b6cd && sh configure && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/eliom && sudo make install && cd ..
 eval `opam config env`
 
 git clone https://github.com/MassD/bson.git && cd bson && ./configure && make && rm -rf ~/.opam/4.00.1/lib/bson && make install && cd ..
