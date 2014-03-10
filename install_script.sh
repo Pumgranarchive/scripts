@@ -22,6 +22,9 @@ eval `opam config env`
 git clone https://github.com/ocsigen/js_of_ocaml.git && cd js_of_ocaml && git checkout de165e2f8d4c3a5f0a213ba995b10fc25cdb3099 && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/js_of_ocaml && sudo make install && cd ..
 eval `opam config env`
 
+git clone https://github.com/ocsigen/wikidoc.git && cd wikidoc && git checkout 0cbe60d67f363f911ac77ab2c0a611cad5384e91 && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/wikidoc && sudo make install && cd ..
+eval `opam config env`
+
 git clone https://github.com/ocsigen/tyxml.git && cd tyxml && git checkout 54418e879c1edec1c44018f22bb6688c389e3a14 && sh configure && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/tyxml && make install && cd ..
 eval `opam config env`
 
