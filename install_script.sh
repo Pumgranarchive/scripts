@@ -13,11 +13,11 @@ opam repository add opamocsigen https://github.com/ocsigen/opam-ocsigen.git
 opam switch 4.00.1
 eval `opam config env`
 
-opam install type_conv ocamlify ocamlmod lwt menhir deriving react calendar optcomp ipaddr ocamlnet pcre-ocaml cryptokit ocaml-text dbm camlzip yojson
+opam install type_conv ocamlify ocamlmod lwt menhir oasis react calendar optcomp ipaddr ocamlnet pcre-ocaml cryptokit ocaml-text dbm camlzip yojson
 eval `opam config env`
 
-# git clone https://github.com/ocsigen/deriving.git && cd deriving && git checkout 91da24ac3c63de8add4dd995bfd80c749b7fbf47 && sh configure && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/deriving && make install && cd ..
-# eval `opam config env`
+git clone https://github.com/ocsigen/deriving.git && cd deriving && git checkout 91da24ac3c63de8add4dd995bfd80c749b7fbf47 && sh configure && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/deriving && make install && cd ..
+eval `opam config env`
 
 git clone https://github.com/ocsigen/js_of_ocaml.git && cd js_of_ocaml && git checkout de165e2f8d4c3a5f0a213ba995b10fc25cdb3099 && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/js_of_ocaml && sudo make install && cd ..
 eval `opam config env`
