@@ -28,7 +28,7 @@ eval `opam config env`
 git clone https://github.com/ocsigen/tyxml.git && cd tyxml && git checkout 54418e879c1edec1c44018f22bb6688c389e3a14 && sh configure && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/tyxml && make install && cd ..
 eval `opam config env`
 
-git clone https://github.com/ocsigen/ocsigenserver.git && cd ocsigenserver && git checkout 04ecb80fe5f9f340405626e05b5ff4e72c7acc31 && sh configure && make && make uninstall && rm -rf  ~/.opam/4.00.1/lib/ocsigenserver && sudo make install && cd ..
+opam install ocsigenserver
 eval `opam config env`
 
 git clone https://github.com/ocsigen/eliom.git && cd eliom && sh configure && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/eliom && sudo make install && cd ..
