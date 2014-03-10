@@ -19,7 +19,7 @@ eval `opam config env`
 tar -xvf ocaml-data-notation.tar.gz && cd ocaml-data-notation-0.0.11 && ./configure && make && rm -rf ~/.opam/4.00.1/lib/odn && make install && cd ..
 eval `opam config env`
 
-tar -xvf oasis.tar.gz && cd oasis-0.4.0 && ./configure && make && rm -rf ~/.opam/4.00.1/lib/userconf && rm -rf ~/.opam/4.00.1/lib/oasis && rm -rf ~/.opam/4.00.1/lib/plugin-loader
+tar -xvf oasis.tar.gz && cd oasis-0.4.0 && ./configure && make && sudo rm -rf ~/.opam/4.00.1/lib/userconf ~/.opam/4.00.1/lib/plugin-loader ~/.opam/4.00.1/lib/oasis && sudo make install && cd ..
 eval `opam config env`
 
 opam install findlib lwt menhir deriving react ocamlssl calendar optcomp ipaddr ocamlnet pcre-ocaml cryptokit ocaml-text ocamlsqlite3 dbm camlzip yojson
