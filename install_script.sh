@@ -13,6 +13,9 @@ opam repository add opamocsigen https://github.com/ocsigen/opam-ocsigen.git
 opam switch 4.00.1
 eval `opam config env`
 
+echo "y\n" | opam install type_conv
+eval `opam config env`
+
 tar -xvf ocaml-data-notation.tar.gz && cd ocaml-data-notation-0.0.11 && ./configure && make && rm -rf ~/.opam/4.00.1/lib/odn && make install && cd ..
 eval `opam config env`
 
