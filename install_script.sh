@@ -37,4 +37,4 @@ eval `opam config env`
 
 sudo /etc/init.d/mongodb start
 
-git clone https://github.com/Pumgrana/prototype.git && cd prototype && mongorestore export_db/pumgrana && make test.byte &
+git clone https://github.com/Pumgrana/prototype.git && cd prototype && ./export_db/import.sh && make test.byte &
