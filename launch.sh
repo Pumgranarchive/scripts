@@ -2,6 +2,6 @@
 
 sudo /etc/init.d/mongodb start
 
-sh run_4store.sh
+sh 4store/run.sh
 
 cd prototype && make test.byte & && cd ..
