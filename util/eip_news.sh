@@ -16,12 +16,19 @@ EMAIL="eip-pumgrana@googlegroups.com"
 RET=`curl --cookie cookies.txt --location --data "login=$LOGIN&password=$PASSWORD" $URL`
 JSON=`echo "$RET" | grep "launchApp"`
 
-JSON2=`echo "$JSON" | sed 's/{[^{]*{[^{]*}[^{]*}/&\n/g'`
+# Insert \n between all data
+JSON2=`echo "$JSON" | sed -e 's/{[^{]*{[^{]*}[^{]*}/&\n/g' -e 's/\[/&\n/g'`
+# Selection wanted lines
 JSON3=`echo "$JSON2" | sed -n 's/[^{]*\(now register\)[^{]*\(EIP\)[^}]*}[^}]*/&/p'`
+# Remove useles user field + insert \n between each fields
 JSON4=`echo "$JSON3" | sed -e 's/"user":{[^{}]*},//g' -e 's/,"/&\n/g'`
+# Select title field
 TMP_TITLE=`echo "$JSON4" | sed -n 's/title":.*/&/p'`
+# Clean title field
 TITLE=`echo "$TMP_TITLE" | sed -e 's/,\?{\?"\?title":"//g' -e 's/","//g'`
+# Select content field
 TMP_CONTENT=`echo "$JSON4" | sed -n 's/content":.*/&/p'`
+# clean content field
 CONTENT=`echo "$TMP_CONTENT" | sed -e 's/,\?"\?content":"//g' -e 's/","//g'`
 
 set -f
