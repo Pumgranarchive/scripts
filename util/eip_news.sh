@@ -17,10 +17,10 @@ RET=`curl --cookie cookies.txt --location --data "login=$LOGIN&password=$PASSWOR
 JSON=`echo "$RET" | grep "launchApp"`
 
 # Insert \n between all data
-JSON2=`echo "$JSON" | sed -e 's/{[^{]*{[^{]*}[^{]*}/&\n/g' -e 's/\[/&\n/g'`
+JSON2=`echo "$JSON" | sed -e 's/{[^{}]*{[^{}]*}[^{}]*}/&\n/g' -e 's/\[/&\n/g'`
 # Selection wanted lines
-JSON3=`echo "$JSON2" | sed -n 's/[^{]*\(now register\)[^{]*\(EIP\)[^}]*}[^}]*/&/p'`
-# Remove useles user field + insert \n between each fields
+JSON3=`echo "$JSON2" | sed -n 's/[^{}]*{[^{}]*eip[^{}]*}[^{}]*/&/p'`
+# Remove user field + insert \n between each fields
 JSON4=`echo "$JSON3" | sed -e 's/"user":{[^{}]*},//g' -e 's/,"/&\n/g'`
 # Select title field
 TMP_TITLE=`echo "$JSON4" | sed -n 's/title":.*/&/p'`
