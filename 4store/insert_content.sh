@@ -1,7 +1,15 @@
 #!/bin/sh
 
+
+
+ID="$0"
+TITLE="$1"
+SUMMARY="$2"
+
+URI="http://pumgrana.com/content/detail/$ID"
 URL="http://localhost:8000/update/"
-QUERY="update=INSERT DATA { <http://pumgrana.com/content/detail/52d9e042ce9e8b2e314c4634> <http://pumgrana.com/ressource/content/title> \"Non-sense\" .
-<http://pumgrana.com/content/detail/52d9e042ce9e8b2e314c4634> <http://pumgrana.com/ressource/content/summary> \"none\" . }"
+QUERY="update=INSERT DATA {
+<$URI> <http://pumgrana.com/ressource/content/title> \"$TITLE\" .
+<$URI> <http://pumgrana.com/ressource/content/summary> \"$SUMMARY\" . }"
 
 curl -i -d "$QUERY" "$URL"
