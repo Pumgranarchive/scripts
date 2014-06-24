@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NAME=pumgrana
+KNAME=pumgrana
 
-sudo 4s-backend $NAME
-4s-httpd -p 8000 $NAME
+sudo 4s-backend $KNAME
+4s-httpd -p 8000 $KNAME
