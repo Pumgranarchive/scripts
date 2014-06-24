@@ -1,2 +1,2 @@
 #!/bin/sh
-4s-backend-setup demo
+4s-backend-setup pumgrana

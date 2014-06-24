@@ -1,4 +1,6 @@
 #!/bin/sh
 
-sudo 4s-backend demo
-4s-httpd -p 8000 demo
+NAME=pumgrana
+
+sudo 4s-backend $NAME
+4s-httpd -p 8000 $NAME
