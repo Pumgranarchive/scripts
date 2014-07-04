@@ -6,3 +6,4 @@ eval `opam config env`
 (cd /tmp && git clone https://github.com/Pumgrana/libraries.git && cd libraries && make reinstall)
 
 sh ../install/4store_install.sh
+sh ../install/tidy_install.sh
