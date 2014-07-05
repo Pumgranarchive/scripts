@@ -17,4 +17,6 @@ git clone https://github.com/zoggy/ocaml-rdf.git && cd ocaml-rdf && ./configure 
 make uninstall
 make install && cd ..
 
+../4store/init.sh
+
 printf "Done\n\n"
