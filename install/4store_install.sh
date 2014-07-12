@@ -6,6 +6,8 @@ sudo apt-get install build-essential libpcre3-dev librasqal3-dev libtool librapt
 
 (cd /tmp/ && git clone https://github.com/garlik/4store.git && cd 4store && ./autogen.sh && ./configure && make && sudo make install)
 
+(cd /tmp/ && git clone https://github.com/rgrinberg/stringext && cd stringext && oasis setup && ocaml setup.ml -configure && ocaml setup.ml -build && ocaml setup.ml -install)
+
 (cd /tmp/ && git clone https://github.com/mirage/ocaml-conduit.git && cd ocaml-conduit && git checkout 944960ae9a7698fe90474b0c9d686f0b6f0d8baf && make && make install)
 
 git clone https://github.com/mirage/ocaml-cohttp.git && cd ocaml-cohttp && oasis setup && make
