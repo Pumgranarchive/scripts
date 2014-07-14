@@ -2,7 +2,7 @@
 
 sudo /etc/init.d/mongodb start
 
-sh 4store/killDaemon.sh
-sh 4store/run.sh
+sh ../scripts/4store/killDaemon.sh
+sh ../scripts/4store/run.sh
 
-(cd prototype && make test.byte &)
+make test.byte &
