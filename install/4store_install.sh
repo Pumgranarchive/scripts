@@ -2,7 +2,15 @@
 
 echo "4Store - installation..."
 
-sudo apt-get install build-essential libpcre3-dev libglib2.0-dev ncurses-dev libreadline-dev autoconf libuuid1 uuid uuid-dev libtool librasqal3-dev libraptor1-dev 
+sudo apt-get install build-essential libpcre3-dev libglib2.0-dev ncurses-dev libreadline-dev autoconf libuuid1 uuid uuid-dev libtool
+
+sudo ln -s /lib/x86_64-linux-gnu/libncurses.so.5 /lib/libncurses.so
+sudo ln -s /lib/x86_64-linux-gnu/libncurses.so.5 /lib/libncurses.so.5
+
+sudo apt-get install libxml2-dev
+sudo apt-get install gcc
+
+sudo apt-get install librasqal3-dev libraptor1-dev
 
 (cd /tmp/ && git clone https://github.com/garlik/4store.git && cd 4store && ./autogen.sh && ./configure && make && sudo make install)
 
