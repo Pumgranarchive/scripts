@@ -12,7 +12,8 @@ opam upgrade
 opam install type_conv ocamlify ocamlmod lwt menhir oasis react calendar optcomp ipaddr ocamlnet pcre-ocaml cryptokit dbm camlzip ssl #ocaml-text
  eval `opam config env`
 
-git clone https://github.com/ocsigen/deriving.git && cd deriving && git checkout 91da24ac3c63de8add4dd995bfd80c749b7fbf47 && sh configure && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/deriving && make install && cd ..
+opam install deriving
+# git clone https://github.com/ocsigen/deriving.git && cd deriving && git checkout 91da24ac3c63de8add4dd995bfd80c749b7fbf47 && sh configure && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/deriving && make install && cd ..
 eval `opam config env`
 
 git clone https://github.com/ocsigen/wikidoc.git && cd wikidoc && git checkout 0cbe60d67f363f911ac77ab2c0a611cad5384e91 && make && make uninstall && rm -rf ~/.opam/4.00.1/lib/wikidoc && sudo make install && cd ..
