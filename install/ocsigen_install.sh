@@ -22,7 +22,10 @@ eval `opam config env`
 # js_of_ocaml 5f45acbe037bd2aa96ee4f828173c7f46f5f5fe0
 # ocsigenserver 04ecb80fe5f9f340405626e05b5ff4e72c7acc31
 # eliom 2107b8bee3772845169d2944cc389f4e7d19b6cd
-opam install tyxml js_of_ocaml ocsigenserver eliom
+opam install tyxml js_of_ocaml ocsigenserver
+
+(git clone https://github.com/ocsigen/eliom -b polymorphicinjections; cd eliom && make && make install PREFIX=$HOME/.opam/4.00.1)
+
 eval `opam config env`
  
 printf "Done\n\n"
