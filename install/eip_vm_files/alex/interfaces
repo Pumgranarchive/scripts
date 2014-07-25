@@ -1,0 +1,11 @@
+# copy me to /etc/network/interfaces
+
+iface lo inet loopback
+auto lo
+
+#auto eth0
+iface eth0 inet static
+address 10.0.2.15
+gateway 10.0.2.2
+netmask 255.255.255.0
+dns-nameservers 8.8.8.8 8.8.4.4

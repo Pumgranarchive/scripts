@@ -10,10 +10,13 @@ sudo apt-get install mongodb-10gen
 opam install yojson
 eval `opam config env`
 
-git clone https://github.com/MassD/bson.git && cd bson && ./configure && make && rm -rf ~/.opam/4.00.1/lib/bson && make install && cd ..
-eval `opam config env`
+# git clone https://github.com/MassD/bson.git && cd bson && ./configure && make && rm -rf ~/.opam/4.00.1/lib/bson && make install && cd ..
+# eval `opam config env`
 
-git clone https://github.com/MassD/mongo.git && cd mongo && ./configure && make && rm -rf ~/.opam/4.00.1/lib/mongo && make install && cd ..
-eval `opam config env`
+# git clone https://github.com/MassD/mongo.git && cd mongo && ./configure && make && rm -rf ~/.opam/4.00.1/lib/mongo && make install && cd ..
+# eval `opam config env`
+
+opam install bson
+opam install mongo
 
 printf "Done\n\n"
