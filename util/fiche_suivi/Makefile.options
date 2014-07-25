@@ -1,0 +1,23 @@
+# Team data
+PROMO=2015
+TEAM=Pumgrana
+SUBJECT=Moteur de navigation s\\\'{e}mantique
+BACKGROUND=background.png
+LOGO=logo_pg.png
+LEADER=saddour\\\_a
+
+# Changing data
+MONTH=Mai
+YEAR=2014
+TEACHER=Romain
+DATE=21/05/2014
+TIME=20:00
+PRESENT=saddou\\\_a, parant\\\_a, carbon\\\_q, djahel\\\_t, pichot\\\_a, \\\newline doison\\\_r, rousse\\\_u
+MISSING=
+PROGRESS=
+QUESTIONS=
+
+#submition configuration
+SVN_FOLDER=../../../eip
+RENDU_FOLDER=rendu
+MSG=[rendu] fiche de suivi $(MONTH) $(YEAR)

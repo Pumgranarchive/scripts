@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+
+% Package
+
+%Utilisation de tout les caractéres du clavier
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+% Marges
+\usepackage[top=0.2cm, bottom=0.2cm, left=0.2cm, right=0.2cm]{geometry}
+%fontsize
+\usepackage{sectsty}
+%fontcolor
+\usepackage{color}
+\usepackage{xcolor}
+%url
+\usepackage{hyperref}
+%images
+\usepackage{graphicx}
+%image positioning
+\usepackage{float}
+%table
+\usepackage{tabularx,booktabs}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+%background
+\usepackage{eso-pic}
+
+\newcommand\BackgroundPic{
+\put(-20,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=25cm,height=32cm,
+keepaspectratio]{%%BACKGROUND%%}
+\vfill
+}}}
+
+\definecolor{claire}{HTML}{EFD8B4}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\AddToShipoutPicture{\BackgroundPic}
+
+% Header
+\begin{figure}[H]
+\includegraphics[totalheight=1.5cm]{./logo_eip_white.png}
+\end{figure}
+
+% Title
+\begin{center}
+{ \huge \bfseries \underline{Fiche de préparation de suivi | %%TEAM%%} \\[0.4cm] }
+\end{center}
+
+\large
+\advance\leftskip by 2cm
+\advance\rightskip by 2cm
+
+~\\ \newline
+Professeur: %%TEACHER%%
+\newline\newline
+Horaire du suivi : %%DATE%% %%TIME%%
+\newline\newline
+Chef de groupe : %%LEADER%%
+\newline\newline
+Membres présents : %%PRESENT%%
+\newline\newline
+Membres absents : %%MISSING%%
+\newline\newline
+Rappel de votre sujet : %%SUBJECT%%
+\newline\newline
+
+\textbf{Etat d'avancement du projet:}
+\newline\newline
+%%PROGRESS%%
+~\newline
+
+\textbf{Questions (Facultatif):}
+\newline\newline
+%%QUESTIONS%%
+
+
+%Bottom
+\begin{figure}[b]
+\begin{flushright}
+\includegraphics[totalheight=1.5cm]{%%LOGO%%}
+\end{flushright}
+\end{figure}
+
+\end{document}
