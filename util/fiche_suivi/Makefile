@@ -21,7 +21,7 @@ $(TEX):		Makefile.options $(TEMPLATE)
 
 submit:		$(PDF)
 		cp $(OUTNAME) $(SVN_FOLDER)/$(RENDU_FOLDER)/.
-		(cd $(SVN_FOLDER) && svn up && svn add $(RENDU_FOLDER)/$(OUTNAME) && echo $(MSG))
+		(cd $(SVN_FOLDER) && svn up && svn add $(RENDU_FOLDER)/$(OUTNAME) && svn commit -m "$(MSG)")
 
 clean:
 		rm -f $(NAME).pdf *.aux *.log *.out *.tex
