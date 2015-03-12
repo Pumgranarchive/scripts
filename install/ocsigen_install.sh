@@ -9,7 +9,7 @@ opam repository add opam-ocsigen https://github.com/ocsigen/opam-ocsigen.git
 opam update
 opam upgrade
 
-opam install type_conv ocamlify ocamlmod lwt menhir oasis react calendar optcomp ipaddr ocamlnet pcre-ocaml cryptokit dbm camlzip ssl #ocaml-text
+opam install type_conv ocamlify ocamlmod lwt menhir oasis react calendar optcomp ipaddr ocamlnet pcre cryptokit dbm camlzip ssl #ocaml-text
  eval `opam config env`
 
 opam install deriving
