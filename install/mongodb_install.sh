@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "MongoDB - installation..."
 
@@ -7,7 +7,7 @@ echo 'deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen' |
 sudo apt-get update
 sudo apt-get install mongodb-10gen
 
-opam install yojson
+echo -e "y\n" opam install yojson
 eval `opam config env`
 
 # git clone https://github.com/MassD/bson.git && cd bson && ./configure && make && rm -rf ~/.opam/4.00.1/lib/bson && make install && cd ..
