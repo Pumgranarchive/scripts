@@ -26,11 +26,19 @@ opam install fieldslib
 # make install
 # cd ..
 
-opam install cohttp ulex xmlm uuidm rdf
+opam install cohttp ulex xmlm uuidm
 
-# git clone https://github.com/zoggy/ocaml-rdf.git && cd ocaml-rdf && ./configure && make
-# make uninstall
-# make install && cd ..
+git clone https://github.com/zoggy/ocaml-rdf.git
+#wget https://github.com/zoggy/ocaml-rdf/archive/release-0.8.0.tar.gz
+#tar -xzvf release-0.8.0.tar.gz
+#rm release-0.8.0.tar.gz
+#cd ocaml-rdf-release-0.8.0
+cd ocaml-rdf
+git checkout 828f3a9351376887d12b5b3b2f02d8f1ead9e747
+./configure lwt
+make lwt
+make install
+cd ..
 
 ../4store/init.sh
 
