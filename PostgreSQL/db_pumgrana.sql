@@ -3,23 +3,23 @@ DROP TABLE Tag;
 DROP TABLE content;
 
 CREATE TABLE Content (
-       content_uri varchar(255) CONSTRAINT pk_content PRIMARY KEY,
+       content_uri text CONSTRAINT pk_content PRIMARY KEY,
        title varchar(255),
-       summary text
+       summary varchar(255)
 );
 
 CREATE TABLE Link (
-       link_id int CONSTRAINT pk_link PRIMARY KEY,
-       origin_uri varchar(255),
-       target_uri varchar(255),
+       link_id bigserial CONSTRAINT pk_link PRIMARY KEY,
+       origin_uri text,
+       target_uri text,
        nature varchar(255),
-       mark float8,
-       user_mark float8
+       mark real,
+       user_mark real
 );
 
 CREATE TABLE Tag (
-       tag_id int CONSTRAINT pk_tag PRIMARY KEY,
-       content_uri varchar(255),
+       tag_id bigserial CONSTRAINT pk_tag PRIMARY KEY,
+       content_uri text,
        subject varchar(255),
-       mark float8
+       mark real
 );
