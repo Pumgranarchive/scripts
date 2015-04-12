@@ -3,9 +3,11 @@
 echo "Opam - installation ..."
 
 ## Swap init
-dd if=/dev/zero of=/var/my_swap bs=4096 count=131072
-mkswap -f /var/my_swap
-swapon /var/my_swap
+sudo dd if=/dev/zero of=/var/my_swap bs=1M count=4096
+#dd if=/dev/zero of=/var/my_swap bs=4096 count=131072
+sudo mkswap -f /var/my_swap
+sudo swapon /var/my_swap
+
 
 # Permanent swap is not needed
 #echo -e "/var/my_swap       none    swap    sw      0       0\n" >> /etc/fstab
@@ -30,11 +32,14 @@ opam switch 4.00.1
 eval `opam config env`
 
 ## Remove swap
-swapoff /var/my_swap
-rm /var/my_swap
+sudo swapoff /var/my_swap
+sudo rm -f /var/my_swap
 
 printf "Done\n\n"
 
 ## Sources
+## http://www.thegeekstuff.com/2010/08/how-to-add-swap-space/
+
+## Old sources
 ## http://www.tldp.org/HOWTO/Partition/setting_up_swap.html
 ## https://wiki.debian.org/Swap
