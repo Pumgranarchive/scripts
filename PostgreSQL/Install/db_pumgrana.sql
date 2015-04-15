@@ -5,7 +5,8 @@ DROP TABLE content;
 CREATE TABLE Content (
        content_uri text CONSTRAINT pk_content PRIMARY KEY,
        title varchar(255),
-       summary varchar(255)
+       summary varchar(255),
+       user_mark real
 );
 
 CREATE TABLE Link (
