@@ -1,9 +1,14 @@
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+#!/bin/bash
 
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo apt-get update 
+#LE SCRIPT EST LANCE EN ROOT PAS BESOIN DE SUDO POUR L'INSTALLDE PAQUETS
 
-echo '' | sudo apt-get install postgresql-9.4 
+apt-get update
+sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+apt-get update 
+
+echo '' | apt-get install postgresql-9.4 
 
 sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password 'pumgrana';"
 
@@ -114,13 +119,38 @@ createdb pumgrana
 
 EOF
 
-sudo service postgresql restart
+service postgresql restart
 
-psql -U api -d pumgrana < db_pumgrana.sql
+echo 'DROP TABLE link;
+DROP TABLE Tag;
+DROP TABLE content;
+
+CREATE TABLE Content (
+       content_uri text CONSTRAINT pk_content PRIMARY KEY,
+       title varchar(255),
+       summary varchar(255),
+	   user_mark real
+);
+
+CREATE TABLE Link (
+       link_id bigserial CONSTRAINT pk_link PRIMARY KEY,
+       origin_uri text,
+       target_uri text,
+       nature varchar(255),
+       mark real,
+       user_mark real
+);
+
+CREATE TABLE Tag (
+       tag_id bigserial CONSTRAINT pk_tag PRIMARY KEY,
+       content_uri text,
+       subject varchar(255),
+       mark real
+);' | psql -U api -d pumgrana
 
 #Installation de Ruby (RVM) et du script
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-echo '' | sudo apt-get install curl
+echo '' | apt-get install curl
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 source /home/admin/.rvm/scripts/rvm
 gem install aws-sdk
