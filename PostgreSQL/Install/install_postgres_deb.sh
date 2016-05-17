@@ -147,10 +147,3 @@ CREATE TABLE Tag (
        subject varchar(255),
        mark real
 );' | psql -U api -d pumgrana
-
-#Installation de Ruby (RVM) et du script
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-echo '' | apt-get install curl
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
-source /home/admin/.rvm/scripts/rvm
-gem install aws-sdk
