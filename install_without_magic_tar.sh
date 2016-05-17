@@ -30,6 +30,7 @@ opam depext dbm.1.
 opam install -y eliom
 opam install -y cohttp
 opam install -y yojson
+opam install -y rdf
 
 #
 # Setup Ocaml Binaries
@@ -38,16 +39,32 @@ opam install -y yojson
 echo 'eval `opam config env`' >> $HOME/.bashrc
 
 #
-# Libraries
+# Create useful directory
 #
 
-opam install -y rdf
+mkdir folder_for_install_script && cd folder_for_install_script
+
+#
+# Libraries
+#
 
 mkdir pumgrana && cd pumgrana
 git clone https://github.com/Pumgrana/libraries
 cd libraries
 make
 
+cd ../
+
 #
 # API
 #
+
+git clone git@vps263525.ovh.net:pumgrana/scripts.git
+cd scripts/PostgreSQL/Install
+chmod 755 install_postgres_deb.sh
+sudo ./install_postgres_deb.sh
+
+
+
+
+
